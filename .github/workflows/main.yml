@@ -1,0 +1,30 @@
+name: بناء تطبيق أندرويد
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: تجهيز Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+        
+    - name: تجهيز Gradle
+      uses: gradle/actions/setup-gradle@v3
+      
+    - name: تنفيذ البناء
+      run: gradle assembleDebug
+      
+    - name: رفع الـ APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: التطبيق-النهائي
+        path: app/build/outputs/apk/debug/*.apk
