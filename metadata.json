@@ -1,0 +1,6 @@
+{
+  "name": "ميزانيتي - إدارة المصاريف والميزانية",
+  "description": "تطبيق محلي لتتبع المصاريف الشهرية، تحديد الميزانية، تقييم الإنفاق، تصدير تقارير PDF، وتنبيهات تجاوز الميزانية.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
